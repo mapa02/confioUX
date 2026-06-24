@@ -951,12 +951,12 @@ async function runAnalysis(){
   const offlineText=offline==='si'?'la transacción se completa en el mundo real fuera de la app':offline==='parcial'?'hay componente offline':'todo ocurre dentro de la app';
 
   try{
-    const res=await fetch('https://api.anthropic.com/v1/messages',{
+    const res=await fetch('/api/analyze',{
       method:'POST',
       headers:{'Content-Type':'application/json'},
       body:JSON.stringify({
-        model:'claude-sonnet-4-6',
-        max_tokens:1000,
+        image: S.img64,
+        mediaType: S.imgType,
         system:`Sos un evaluador experto en UX de confianza para marketplaces digitales. Aplicás el marco ConfíoUX, que organiza la confianza en cinco dimensiones: Identidad, Claridad de flujos, Validación, Consistencia y Confianza institucional.
 
 Tu análisis debe ser directo, técnico y accionable. Sin lenguaje motivacional. Cada mejora recomendada debe ser implementable por un desarrollador.
@@ -975,16 +975,13 @@ Al final incluí:
 
 ## 🔴 R_crit
 [indicá si algún criterio crítico está ausente: nombre completo visible, validación en tiempo real, navegación estable, contratos diferenciados de mensajes, resumen antes de confirmar pago]`,
-        messages:[{role:'user',content:[
-          {type:'image',source:{type:'base64',media_type:S.imgType,data:S.img64}},
-          {type:'text',text:`Marketplace: ${type} | Etapa: ${stage} | Flujo: ${flow}
+        userMessage:`Marketplace: ${type} | Etapa: ${stage} | Flujo: ${flow}
 Contexto de transacción: ${offlineText}
 
 User stories del flujo:
 ${stories}
 
-Evaluá esta interfaz contra las 5 dimensiones de ConfíoUX Y contra las user stories definidas. Las user stories son el estándar real del equipo — si la interfaz no las cumple, es un problema de confianza aunque los criterios genéricos estén presentes.`}
-        ]}]
+Evaluá esta interfaz contra las 5 dimensiones de ConfíoUX Y contra las user stories definidas. Las user stories son el estándar real del equipo — si la interfaz no las cumple, es un problema de confianza aunque los criterios genéricos estén presentes.`
       })
     });
     const data=await res.json();
