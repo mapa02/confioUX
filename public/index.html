@@ -71,6 +71,44 @@ body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:15
 .inner-title{font-size:36px;font-weight:700;letter-spacing:-1px;line-height:1.15;margin-bottom:12px}
 .inner-desc{color:var(--text-2);font-size:15px;margin-bottom:48px;max-width:540px;line-height:1.75}
 
+/* ── PUNTAJE CONFIANZA ── */
+.puntaje-section{background:var(--surface);border:1px solid var(--accent);border-radius:16px;padding:32px;margin-bottom:48px}
+.puntaje-header{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:16px;gap:16px}
+.puntaje-eyebrow{font-size:10px;text-transform:uppercase;letter-spacing:2px;color:var(--accent-hi);font-weight:600;margin-bottom:4px}
+.puntaje-title{font-size:22px;font-weight:700;letter-spacing:-0.5px}
+.puntaje-badge{font-size:11px;font-family:var(--mono);background:var(--accent-lo);border:1px solid var(--accent);color:var(--accent-hi);padding:5px 12px;border-radius:6px;white-space:nowrap;flex-shrink:0}
+.puntaje-desc{font-size:13px;color:var(--text-2);line-height:1.7;margin-bottom:28px}
+
+.puntaje-equations{display:flex;flex-direction:column;gap:12px;margin-bottom:28px}
+.eq-block{background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:16px 20px}
+.eq-label{font-size:10px;text-transform:uppercase;letter-spacing:1.5px;color:var(--text-3);font-weight:600;margin-bottom:8px}
+.eq-formula{font-family:var(--mono);font-size:15px;color:var(--accent-hi);margin-bottom:6px}
+.eq-note{font-size:11px;color:var(--text-3);line-height:1.5}
+
+.puntaje-ranges{margin-bottom:24px}
+.puntaje-ranges-label{font-size:11px;text-transform:uppercase;letter-spacing:1.5px;color:var(--text-3);font-weight:600;margin-bottom:12px}
+.puntaje-ranges-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.range-item{border-radius:8px;padding:14px 16px;border:1px solid}
+.range-item.range-ok{background:var(--ok-lo);border-color:rgba(16,185,129,0.3)}
+.range-item.range-warn{background:var(--warn-lo);border-color:rgba(245,158,11,0.3)}
+.range-item.range-danger{background:var(--danger-lo);border-color:rgba(239,68,68,0.3)}
+.range-num{font-family:var(--mono);font-size:16px;font-weight:700;margin-bottom:4px}
+.range-item.range-ok .range-num{color:var(--ok)}
+.range-item.range-warn .range-num{color:var(--warn)}
+.range-item.range-danger .range-num{color:var(--danger)}
+.range-label{font-size:12px;font-weight:600;margin-bottom:4px}
+.range-desc{font-size:11px;color:var(--text-3);line-height:1.5}
+
+.puntaje-rcrit{display:flex;align-items:flex-start;gap:12px;background:var(--warn-lo);border:1px solid rgba(245,158,11,0.3);border-radius:8px;padding:14px 16px;margin-bottom:20px}
+.puntaje-rcrit-icon{font-size:18px;flex-shrink:0}
+.puntaje-rcrit-title{font-size:13px;font-weight:600;margin-bottom:4px}
+.puntaje-rcrit-desc{font-size:12px;color:var(--text-2);line-height:1.6}
+
+.puntaje-disclaimer{font-size:11px;color:var(--text-3);line-height:1.65;padding:12px 16px;background:var(--surface2);border-radius:6px;border-left:2px solid var(--border)}
+.puntaje-disclaimer strong{color:var(--text-2)}
+
+@media(max-width:768px){.puntaje-ranges-grid{grid-template-columns:1fr}}
+
 /* ── FRAMEWORK OVERVIEW ── */
 .framework-overview{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:48px}
 .fw-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px}
@@ -271,6 +309,18 @@ select option{background:#1C1C27}
 .export-title{font-size:14px;font-weight:600;margin-bottom:6px}
 .export-desc{font-size:13px;color:var(--text-2);margin-bottom:16px;line-height:1.6}
 .export-actions{display:flex;gap:8px;flex-wrap:wrap}
+/* ── RESULT RADAR ── */
+.result-radar-card{background:var(--surface);border:1px solid var(--accent);border-radius:16px;overflow:hidden}
+.result-radar-header{display:flex;align-items:center;justify-content:space-between;padding:20px 24px;border-bottom:1px solid var(--border);background:var(--accent-lo)}
+.result-radar-title{font-size:14px;font-weight:700;color:var(--accent-hi);margin-bottom:3px}
+.result-radar-sub{font-size:11px;color:var(--text-3)}
+.result-overall{text-align:right;display:flex;align-items:baseline;gap:4px}
+.result-overall-num{font-size:48px;font-weight:700;font-family:var(--mono);letter-spacing:-2px;line-height:1}
+.result-overall-label{font-size:16px;color:var(--text-3);font-family:var(--mono)}
+.result-radar-body{display:grid;grid-template-columns:260px 1fr;align-items:center;padding:24px;gap:24px}
+.result-radar-scores{display:flex;flex-direction:column;gap:10px}
+@media(max-width:768px){.result-radar-body{grid-template-columns:1fr;justify-items:center}}
+
 .privacy-note{display:flex;align-items:center;gap:8px;margin-top:20px;padding:10px 14px;background:var(--surface2);border-radius:8px;font-size:11px;color:var(--text-3)}
 .privacy-dot{width:5px;height:5px;border-radius:50%;background:var(--ok);flex-shrink:0}
 
@@ -284,28 +334,28 @@ select option{background:#1C1C27}
   <div class="home-wrap">
     <div class="home-eyebrow">ConfíoUX · Trust Evaluation Framework</div>
     <h1 class="home-title">La confianza no es<br>un detalle de diseño.<br><em>Es la decisión.</em></h1>
-    <p class="home-desc">Un framework para aplicaciones de marketplace donde quieran tener como caracteristica principal: la confianza. Documentación, prompts y evaluación asistida por IA.</p>
+    <p class="home-desc">Un framework especializado para marketplaces donde dos desconocidos se ponen de acuerdo en la app — y se encuentran en el mundo real. Documentación, prompts y evaluación asistida por IA.</p>
 
     <div class="cards">
       <div class="card card-1" onclick="goScreen('doc')">
         <div class="card-icon">📐</div>
         <div class="card-label">Framework</div>
         <div class="card-title">Las 5 dimensiones de confianza UX</div>
-        <div class="card-desc">Fundamento teorico del framework.</div>
+        <div class="card-desc">Identidad, claridad, validación, consistencia y respaldo institucional. Con criterios observables, fundamento teórico y matriz de objetivos → señales → métricas.</div>
         <div class="card-cta" style="">Explorar el framework <span>→</span></div>
       </div>
       <div class="card card-2" onclick="goScreen('prompts')">
         <div class="card-icon">✍️</div>
         <div class="card-label">Prompts</div>
         <div class="card-title">Diseñá con confianza desde cero</div>
-        <div class="card-desc">Prompts listos para usar con modelos multimodales.</div>
+        <div class="card-desc">Prompts listos para usar con Claude, ChatGPT u otro modelo multimodal. Uno por dimensión y uno de evaluación completa. Copiá y pegá con tu captura de pantalla.</div>
         <div class="card-cta">Ver los prompts <span>→</span></div>
       </div>
       <div class="card card-3" onclick="goScreen('eval')">
         <div class="card-icon">🔍</div>
         <div class="card-label">Evaluación</div>
         <div class="card-title">Analizá tus pantallas con IA</div>
-        <div class="card-desc">Cargá una captura de pantalla y obtené un análisis estructurado con las reglas de ConfíoUX.</div>
+        <div class="card-desc">Cargá una captura de pantalla de tu flujo, evaluá los criterios y obtené un análisis estructurado por dimensión generado por Claude, guiado por ConfíoUX.</div>
         <div class="card-cta">Evaluar mi interfaz <span>→</span></div>
       </div>
     </div>
@@ -327,7 +377,7 @@ select option{background:#1C1C27}
   <div class="inner-wrap">
     <div class="inner-eyebrow">Documentación</div>
     <h1 class="inner-title">Cómo se construye<br>confianza con UX</h1>
-    <p class="inner-desc">La confianza es la disposición de una persona a ser vulnerable frente a otra dentro de un entorno mediado por tecnología. Para lograrla, este marco organiza esa confianza en cinco dimensiones observables y medibles.</p>
+    <p class="inner-desc">En marketplaces donde dos desconocidos acuerdan en la app y se encuentran en el mundo real, la interfaz es el único mecanismo de confianza disponible antes de la transacción. ConfíoUX organiza esa confianza en cinco dimensiones observables y medibles.</p>
 
     <!-- Framework overview -->
     <div class="framework-overview">
@@ -357,6 +407,70 @@ select option{background:#1C1C27}
     <p style="font-size:13px;color:var(--text-3);margin-bottom:32px;line-height:1.65">Cada dimensión incluye el problema real que resuelve, los criterios que la definen y un ejemplo visual de interfaz con el problema vs la solución.</p>
 
     <div class="dim-grid" id="docDimGrid"></div>
+
+    <!-- PuntajeConfianza -->
+    <div class="puntaje-section">
+      <div class="puntaje-header">
+        <div>
+          <div class="puntaje-eyebrow">Componente complementario</div>
+          <div class="puntaje-title">PuntajeConfianza</div>
+        </div>
+        <div class="puntaje-badge">Índice exploratorio</div>
+      </div>
+
+      <p class="puntaje-desc">Un índice numérico para resumir el grado de cumplimiento de los criterios de ConfíoUX durante una auditoría. Su utilidad principal es comparar iteraciones de una misma interfaz y mantener trazabilidad entre el resultado global y las dimensiones que requieren mejoras.</p>
+
+      <div class="puntaje-equations">
+        <div class="eq-block">
+          <div class="eq-label">1 — Score normalizado por dimensión</div>
+          <div class="eq-formula">D<sub>j</sub> = Σ(w<sub>ij</sub> · c<sub>ij</sub>) / Σ(w<sub>ij</sub>)</div>
+          <div class="eq-note">donde c<sub>ij</sub> ∈ {0, 0.5, 1} — ausente, parcial, presente</div>
+        </div>
+        <div class="eq-block">
+          <div class="eq-label">2 — Score global ponderado</div>
+          <div class="eq-formula">PuntajeConfianza = 100 × Σ(α<sub>j</sub> · D<sub>j</sub>)</div>
+          <div class="eq-note">con α<sub>j</sub> = 0.20 en esta versión (ponderación uniforme)</div>
+        </div>
+        <div class="eq-block">
+          <div class="eq-label">3 — Indicador de criterios críticos</div>
+          <div class="eq-formula">R<sub>crit</sub> = 1 si ∃ k ∈ K : c<sub>k</sub> = 0</div>
+          <div class="eq-note">K = {nombre visible, validación, navegación estable, contratos diferenciados, resumen de pago}</div>
+        </div>
+      </div>
+
+      <div class="puntaje-ranges">
+        <div class="puntaje-ranges-label">Interpretación del score</div>
+        <div class="puntaje-ranges-grid">
+          <div class="range-item range-ok">
+            <div class="range-num">80 – 100</div>
+            <div class="range-label">Cobertura alta</div>
+            <div class="range-desc">Señales de confianza bien cubiertas en las dimensiones evaluadas</div>
+          </div>
+          <div class="range-item range-warn">
+            <div class="range-num">50 – 79</div>
+            <div class="range-label">Cobertura parcial</div>
+            <div class="range-desc">Hay dimensiones con criterios ausentes o parciales que requieren atención</div>
+          </div>
+          <div class="range-item range-danger">
+            <div class="range-num">0 – 49</div>
+            <div class="range-label">Cobertura baja</div>
+            <div class="range-desc">Múltiples dimensiones con problemas — riesgo de abandono antes de completar la transacción</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="puntaje-rcrit">
+        <div class="puntaje-rcrit-icon">⚠️</div>
+        <div>
+          <div class="puntaje-rcrit-title">R_crit es independiente del score global</div>
+          <div class="puntaje-rcrit-desc">Si R<sub>crit</sub> = 1, hay al menos un criterio crítico completamente ausente. Un score global favorable puede ocultar esa falla. R<sub>crit</sub> siempre debe reportarse junto al PuntajeConfianza.</div>
+        </div>
+      </div>
+
+      <div class="puntaje-disclaimer">
+        <strong>Limitaciones:</strong> Los pesos uniformes (α = 0.20) son una simplificación inicial no validada empíricamente. El índice no mide directamente la confianza psicológica de los usuarios. Requiere calibración con especialistas y medición de concordancia entre evaluadores antes de usarse como comparativa entre productos distintos.
+      </div>
+    </div>
 
     <div class="matrix-section">
       <div class="matrix-title">Matriz objetivos → señales → métricas</div>
@@ -512,6 +626,33 @@ select option{background:#1C1C27}
           Evaluando contra las 5 dimensiones de ConfíoUX...
         </div>
         <div class="ai-body" id="aiBody"></div>
+      </div>
+
+      <!-- PuntajeConfianza radar -->
+      <div id="resultRadarWrap" style="display:none;margin-top:20px">
+        <div id="rcritBanner" style="display:none;align-items:flex-start;gap:12px;padding:14px 18px;background:var(--danger-lo);border:1px solid var(--danger);border-radius:10px;margin-bottom:12px">
+          <span style="font-size:18px;flex-shrink:0">🔴</span>
+          <div>
+            <div style="font-size:12px;font-weight:700;color:var(--danger);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:3px">R_crit = 1 — Score no confiable</div>
+            <div style="font-size:12px;color:var(--text-2);line-height:1.6" id="rcritBannerText"></div>
+          </div>
+        </div>
+        <div class="result-radar-card">
+          <div class="result-radar-header">
+            <div>
+              <div class="result-radar-title">PuntajeConfianza</div>
+              <div class="result-radar-sub">Estimación generada por IA · No reemplaza evaluación independiente</div>
+            </div>
+            <div class="result-overall">
+              <div class="result-overall-num" id="resultOverallNum">—</div>
+              <div class="result-overall-label">/100</div>
+            </div>
+          </div>
+          <div class="result-radar-body">
+            <canvas id="resultRadarCanvas" width="260" height="240"></canvas>
+            <div class="result-radar-scores" id="resultRadarRows"></div>
+          </div>
+        </div>
       </div>
 
       <!-- Prompt fallback (oculto por defecto) -->
@@ -1172,6 +1313,32 @@ function removeImage(e){
 }
 
 // ── CLAUDE API ────────────────────────────────────────────────────────────────
+function drawResultRadar(scores){
+  const cv=document.getElementById('resultRadarCanvas'); if(!cv) return;
+  const ctx=cv.getContext('2d');
+  const W=260,H=240,cx=W/2,cy=H/2+4,R=90,n=5;
+  ctx.clearRect(0,0,W,H);
+  const ang=i=>(Math.PI*2*i/n)-Math.PI/2;
+  const pt=(i,r)=>({x:cx+r*Math.cos(ang(i)),y:cy+r*Math.sin(ang(i))});
+  [0.25,0.5,0.75,1].forEach(f=>{
+    ctx.beginPath();
+    for(let i=0;i<n;i++){const p=pt(i,R*f);i===0?ctx.moveTo(p.x,p.y):ctx.lineTo(p.x,p.y);}
+    ctx.closePath();ctx.strokeStyle=f===1?'#2A2A3A':'#1C1C27';ctx.lineWidth=1;ctx.stroke();
+  });
+  for(let i=0;i<n;i++){const p=pt(i,R);ctx.beginPath();ctx.moveTo(cx,cy);ctx.lineTo(p.x,p.y);ctx.strokeStyle='#2A2A3A';ctx.lineWidth=1;ctx.stroke();}
+  ctx.beginPath();
+  for(let i=0;i<n;i++){const s=scores[i];const p=pt(i,R*s);i===0?ctx.moveTo(p.x,p.y):ctx.lineTo(p.x,p.y);}
+  ctx.closePath();ctx.fillStyle='rgba(124,58,237,0.18)';ctx.fill();ctx.strokeStyle='#7C3AED';ctx.lineWidth=2;ctx.stroke();
+  for(let i=0;i<n;i++){
+    const p=pt(i,R*scores[i]);ctx.beginPath();ctx.arc(p.x,p.y,5,0,Math.PI*2);
+    ctx.fillStyle=scores[i]>=0.8?'#10B981':scores[i]>=0.5?'#F59E0B':'#EF4444';ctx.fill();
+  }
+  ctx.font='500 10px Space Grotesk,sans-serif';ctx.textAlign='center';ctx.textBaseline='middle';
+  ['Identidad','Claridad','Validación','Consistencia','Institucional'].forEach((l,i)=>{
+    const p=pt(i,R+20);ctx.fillStyle='#94A3B8';ctx.fillText(l,p.x,p.y);
+  });
+}
+
 async function runAnalysis(){
   if(!S.img64) return;
   const btn=document.getElementById('analyzeBtn');
@@ -1181,8 +1348,10 @@ async function runAnalysis(){
   const ph=document.getElementById('aiPlaceholder');
   const th=document.getElementById('aiThinking');
   const body=document.getElementById('aiBody');
+  const radarWrap=document.getElementById('resultRadarWrap');
   dot.className='ai-dot loading'; ht.textContent='Claude está evaluando la interfaz...';
   ph.style.display='none'; th.style.display='block'; body.style.display='none';
+  radarWrap.style.display='none';
 
   const type=document.getElementById('mkt-type').value||'marketplace de servicios';
   const stage=document.getElementById('mkt-stage').value||'no especificada';
@@ -1215,30 +1384,87 @@ Al final incluí:
 [ordenadas por impacto, con una línea de justificación cada una]
 
 ## 🔴 R_crit
-[indicá si algún criterio crítico está ausente: nombre completo visible, validación en tiempo real, navegación estable, contratos diferenciados de mensajes, resumen antes de confirmar pago]`,
+[indicá si algún criterio crítico está ausente: nombre completo visible, validación en tiempo real, navegación estable, contratos diferenciados de mensajes, resumen antes de confirmar pago]
+
+MUY IMPORTANTE: Al final de todo tu respuesta, agregá un bloque JSON con este formato exacto (no lo omitas):
+<scores>
+{"identidad":0.0,"claridad":0.0,"validacion":0.0,"consistencia":0.0,"institucional":0.0,"rcrit":0,"rcrit_motivo":""}
+</scores>
+Donde:
+- Cada valor de dimensión es un número entre 0 y 1 (0 = ausente, 0.5 = parcial, 1 = presente)
+- rcrit es 1 si alguno de estos criterios críticos está COMPLETAMENTE AUSENTE en la interfaz: nombre completo visible, validación en tiempo real en campos críticos, navegación estable (no dinámica por estado), contratos visualmente diferenciados de mensajes, resumen claro antes de confirmar pago. Si están presentes aunque sea parcialmente, rcrit = 0.
+- rcrit_motivo lista los criterios críticos ausentes separados por coma, o vacío si rcrit = 0.`,
         userMessage:`Marketplace: ${type} | Etapa: ${stage} | Flujo: ${flow}
 Contexto de transacción: ${offlineText}
 
 User stories del flujo:
 ${stories}
 
-Evaluá esta interfaz contra las 5 dimensiones de ConfíoUX Y contra las user stories definidas. Las user stories son el estándar real del equipo — si la interfaz no las cumple, es un problema de confianza aunque los criterios genéricos estén presentes.`
+Evaluá esta interfaz contra las 5 dimensiones de ConfíoUX Y contra las user stories definidas.`
       })
     });
     const data=await res.json();
-    const text=data.content?.map(b=>b.text||'').join('')||'Sin respuesta.';
+    let text=data.content?.map(b=>b.text||'').join('')||'Sin respuesta.';
+
+    // Extraer scores del bloque <scores>
+    const scoresMatch=text.match(/<scores>([\s\S]*?)<\/scores>/);
+    let dimScores=[0.5,0.5,0.5,0.5,0.5];
+    let rcrit=0, rcritMotivo='';
+    if(scoresMatch){
+      try{
+        const parsed=JSON.parse(scoresMatch[1].trim());
+        dimScores=[
+          parsed.identidad||0.5,
+          parsed.claridad||0.5,
+          parsed.validacion||0.5,
+          parsed.consistencia||0.5,
+          parsed.institucional||0.5
+        ];
+        rcrit=parsed.rcrit||0;
+        rcritMotivo=parsed.rcrit_motivo||'';
+      }catch(e){}
+      text=text.replace(/<scores>[\s\S]*?<\/scores>/,'').trim();
+    }
     S.aiAnalysis=text;
+
     dot.className='ai-dot live'; ht.textContent='Análisis completado — ConfíoUX × Claude';
     th.style.display='none'; body.style.display='block';
     body.innerHTML=text
       .replace(/^## (.+)$/gm,'<h3>$1</h3>')
       .replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>')
       .replace(/\n/g,'<br>');
+
+    // Mostrar radar con PuntajeConfianza
+    const overall=Math.round(dimScores.reduce((a,b)=>a+b,0)/dimScores.length*100);
+    const overallColor=overall>=80?'#10B981':overall>=50?'#F59E0B':'#EF4444';
+    radarWrap.style.display='block';
+    document.getElementById('resultOverallNum').textContent=overall;
+    document.getElementById('resultOverallNum').style.color=overallColor;
+
+    // R_crit banner
+    const rcritBanner=document.getElementById('rcritBanner');
+    if(rcrit===1 && rcritMotivo){
+      rcritBanner.style.display='flex';
+      document.getElementById('rcritBannerText').textContent=
+        `R_crit = 1 — Criterios críticos ausentes: ${rcritMotivo}. El PuntajeConfianza puede ser engañoso.`;
+    } else {
+      rcritBanner.style.display='none';
+    }
+
+    document.getElementById('resultRadarRows').innerHTML=
+      ['Identidad','Claridad','Validación','Consistencia','Institucional']
+      .map((l,i)=>{
+        const s=dimScores[i]; const pct=Math.round(s*100);
+        const col=s>=0.8?'#10B981':s>=0.5?'#F59E0B':'#EF4444';
+        return `<div class="radar-row"><span class="radar-row-label">${DIMS[i].icon} ${l}</span><span class="radar-row-val" style="color:${col}">${pct}%</span></div>`;
+      }).join('');
+    drawResultRadar(dimScores);
+
   }catch(err){
     dot.className='ai-dot'; dot.style.background='var(--danger)';
     ht.textContent='Error en el análisis';
     th.style.display='none'; body.style.display='block';
-    body.innerHTML=`<span style="color:var(--danger);font-size:13px">Error: ${err.message}<br><br><span style="color:var(--text-3)">Usá "Solo quiero el prompt" para analizar manualmente en Claude o ChatGPT.</span></span>`;
+    body.innerHTML=`<span style="color:var(--danger);font-size:13px">Error: ${err.message}<br><br><span style="color:var(--text-3)">Usá "Usar otra IA" para analizar manualmente.</span></span>`;
   }
   btn.disabled=false;
   btn.innerHTML='⚡ Analizar nuevamente';
